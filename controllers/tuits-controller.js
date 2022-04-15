@@ -3,7 +3,12 @@ let tuits = posts;
 
 export default (app) => {
  app.post('/api/tuits', createTuit);
-	@@ -9,34 +8,34 @@ export default (app) => {
+ app.get('/api/tuits', findAllTuits);
+ app.put('/api/tuits/:tid', updateTuit);
+ app.delete('/api/tuits/:tid', deleteTuit);
+}
+
+export default (app) => {
  app.put('/api/tuits/:tid', dislikeTuit);
 }
 
@@ -35,6 +40,13 @@ const updateTuit = (req, res) => {
  const tuitdIdToUpdate = req.params.tid;
  const updatedTuit = req.body;
  tuits = tuits.map(t => t._id === tuitdIdToUpdate ? updatedTuit : t);
+ res.sendStatus(200);
+}
+
+const dislikeTuit = (req, res) => {
+ const tuitdIdToDislike = req.params.tid;
+ const dislikedTuit = req.body;
+ tuits = tuits.map(t => t._id === tuitdIdToDislike ? dislikedTuit : t);
  res.sendStatus(200);
 }
 
