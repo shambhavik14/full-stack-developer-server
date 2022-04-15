@@ -6,9 +6,6 @@ export default (app) => {
  app.get('/api/tuits', findAllTuits);
  app.put('/api/tuits/:tid', updateTuit);
  app.delete('/api/tuits/:tid', deleteTuit);
-}
-
-export default (app) => {
  app.put('/api/tuits/:tid', dislikeTuit);
 }
 
