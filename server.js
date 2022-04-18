@@ -13,16 +13,8 @@ mongoose.connect(CONNECTION_STRING);
 
 
 const app = express();
-//const cors = require('cors');
-const corsOptions ={
-    origin:'http://localhost:3000',
-    credentials:true,
-    optionSuccessStatus:200
-}
-app.use(cors(corsOptions));
+const cors = require('cors');
 app.use(express.json());
 userController(app);
 tuitsController(app);
 app.listen(process.env.PORT || 4000);
-
-/*mongoose.connect('mongodb://localhost:27017/webdev');*/
