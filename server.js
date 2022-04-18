@@ -13,6 +13,7 @@ mongoose.connect(CONNECTION_STRING);
 
 
 const app = express();
+var cors = require('cors')
 app.use(cors());
 app.use(express.json());
 userController(app);
