@@ -3,5 +3,5 @@ import tuitsSchema from './tuits-schema.js'
 
 
 const tuitsModel = mongoose
-              .model('TuitModel', tuitsSchema);
+              .model('tuitsModel', tuitsSchema);
 export default tuitsModel;
